@@ -49,12 +49,12 @@
 					"label": ""
 				},
 				{
-					"line": 267,
+					"line": 271,
 					"column": 20,
 					"label": ""
 				},
 				{
-					"line": 271,
+					"line": 275,
 					"column": 20,
 					"label": ""
 				}
@@ -161,6 +161,26 @@
 				{
 					"line": 41,
 					"column": 31,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/platforms/web/runtime/modules/events.js",
+			"bookmarks": [
+				{
+					"line": 82,
+					"column": 11,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "packages/vue-template-compiler/browser.js",
+			"bookmarks": [
+				{
+					"line": 5680,
+					"column": 26,
 					"label": ""
 				}
 			]

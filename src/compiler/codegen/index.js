@@ -211,6 +211,10 @@ export function genFor (
   }
 
   el.forProcessed = true // avoid recursion
+  console.log('v-for---->>%o', `${altHelper || '_l'}((${exp}),` +
+  `function(${alias}${iterator1}${iterator2}){` +
+    `return ${(altGen || genElement)(el, state)}` +
+  '})');
   return `${altHelper || '_l'}((${exp}),` +
     `function(${alias}${iterator1}${iterator2}){` +
       `return ${(altGen || genElement)(el, state)}` +
