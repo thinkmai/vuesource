@@ -1,0 +1,169 @@
+{
+	"files": [
+		{
+			"path": "src/core/vdom/create-element.js",
+			"bookmarks": [
+				{
+					"line": 95,
+					"column": 16,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/compiler/parser/index.js",
+			"bookmarks": [
+				{
+					"line": 207,
+					"column": 23,
+					"label": ""
+				},
+				{
+					"line": 402,
+					"column": 32,
+					"label": ""
+				},
+				{
+					"line": 623,
+					"column": 12,
+					"label": ""
+				},
+				{
+					"line": 758,
+					"column": 33,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/compiler/codegen/index.js",
+			"bookmarks": [
+				{
+					"line": 48,
+					"column": 13,
+					"label": ""
+				},
+				{
+					"line": 186,
+					"column": 2,
+					"label": ""
+				},
+				{
+					"line": 267,
+					"column": 20,
+					"label": ""
+				},
+				{
+					"line": 271,
+					"column": 20,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/core/instance/lifecycle.js",
+			"bookmarks": [
+				{
+					"line": 58,
+					"column": 24,
+					"label": ""
+				},
+				{
+					"line": 147,
+					"column": 16,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "packages/weex-vue-framework/factory.js",
+			"bookmarks": [
+				{
+					"line": 4264,
+					"column": 26,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/platforms/web/runtime/index.js",
+			"bookmarks": [
+				{
+					"line": 36,
+					"column": 8,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/core/instance/render.js",
+			"bookmarks": [
+				{
+					"line": 30,
+					"column": 25,
+					"label": ""
+				},
+				{
+					"line": 68,
+					"column": 15,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/compiler/index.js",
+			"bookmarks": [
+				{
+					"line": 19,
+					"column": 37,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/platforms/web/entry-runtime-with-compiler.js",
+			"bookmarks": [
+				{
+					"line": 68,
+					"column": 16,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/core/instance/state.js",
+			"bookmarks": [
+				{
+					"line": 48,
+					"column": 8,
+					"label": ""
+				},
+				{
+					"line": 173,
+					"column": 1,
+					"label": ""
+				},
+				{
+					"line": 310,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 352,
+					"column": 12,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/core/instance/events.js",
+			"bookmarks": [
+				{
+					"line": 41,
+					"column": 31,
+					"label": ""
+				}
+			]
+		}
+	]
+}
