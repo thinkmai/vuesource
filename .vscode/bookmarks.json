@@ -79,6 +79,11 @@
 			"path": "packages/weex-vue-framework/factory.js",
 			"bookmarks": [
 				{
+					"line": 3528,
+					"column": 18,
+					"label": ""
+				},
+				{
 					"line": 4264,
 					"column": 26,
 					"label": ""
@@ -181,6 +186,26 @@
 				{
 					"line": 5680,
 					"column": 26,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/core/vdom/helpers/resolve-async-component.js",
+			"bookmarks": [
+				{
+					"line": 42,
+					"column": 29,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "flow/component.js",
+			"bookmarks": [
+				{
+					"line": 4,
+					"column": 29,
 					"label": ""
 				}
 			]
