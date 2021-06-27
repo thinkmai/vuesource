@@ -19,17 +19,17 @@
 					"label": ""
 				},
 				{
-					"line": 402,
+					"line": 404,
 					"column": 32,
 					"label": ""
 				},
 				{
-					"line": 623,
+					"line": 625,
 					"column": 12,
 					"label": ""
 				},
 				{
-					"line": 758,
+					"line": 760,
 					"column": 33,
 					"label": ""
 				}
@@ -205,6 +205,16 @@
 			"bookmarks": [
 				{
 					"line": 4,
+					"column": 29,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/compiler/parser/html-parser.js",
+			"bookmarks": [
+				{
+					"line": 193,
 					"column": 29,
 					"label": ""
 				}

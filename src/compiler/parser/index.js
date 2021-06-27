@@ -214,6 +214,7 @@ export function parse (
     shouldDecodeNewlinesForHref: options.shouldDecodeNewlinesForHref,
     shouldKeepComment: options.comments,
     outputSourceRange: options.outputSourceRange,
+    //将匹配的到的开始节点转成ast节点
     start (tag, attrs, unary, start, end) {
       // check namespace.
       // inherit parent ns if there is one
@@ -300,7 +301,7 @@ export function parse (
         closeElement(element)
       }
     },
-
+    //将匹配的到的结束节点转成ast节点
     end (tag, start, end) {
       const element = stack[stack.length - 1]
       // pop stack
@@ -311,8 +312,9 @@ export function parse (
       }
       closeElement(element)
     },
-
+    //处理匹配到的文本节点，创建child节点，放到currentParent.children数组里
     chars (text: string, start: number, end: number) {
+      console.log("🚀 ~ file: index.js ~ line 317 ~ chars ~ text", text)
       if (!currentParent) {
         if (process.env.NODE_ENV !== 'production') {
           if (text === template) {

@@ -14,12 +14,19 @@ import { isNonPhrasingTag } from 'web/compiler/util'
 import { unicodeRegExp } from 'core/util/lang'
 
 // Regular Expressions for parsing tags and attributes
+// id="app" id='app' id=app
 const attribute = /^\s*([^\s"'<>\/=]+)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/
+//v-bind:[attrName]="attrVal",:[attrName]="attrVal"
 const dynamicArgAttribute = /^\s*((?:v-[\w-]+:|@|:|#)\[[^=]+?\][^\s"'<>\/=]*)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/
+//标签名  <my-header></my-header>
 const ncname = `[a-zA-Z_][\\-\\.0-9_a-zA-Z${unicodeRegExp.source}]*`
+// <my:header></my:header>
 const qnameCapture = `((?:${ncname}\\:)?${ncname})`
+// <div
 const startTagOpen = new RegExp(`^<${qnameCapture}`)
+// > />
 const startTagClose = /^\s*(\/?)>/
+// </div>
 const endTag = new RegExp(`^<\\/${qnameCapture}[^>]*>`)
 const doctype = /^<!DOCTYPE [^>]+>/i
 // #7298: escape - to avoid being passed as HTML comment when inlined in page
@@ -60,11 +67,11 @@ export function parseHTML (html, options) {
   let last, lastTag
   while (html) {
     last = html
-    // Make sure we're not in a plaintext content element like script/style
+    // lastTag不存在或者不是script||style
     if (!lastTag || !isPlainTextElement(lastTag)) {
       let textEnd = html.indexOf('<')
       if (textEnd === 0) {
-        // Comment:
+        // Comment: 是否包含注释节点
         if (comment.test(html)) {
           const commentEnd = html.indexOf('-->')
 
@@ -186,6 +193,7 @@ export function parseHTML (html, options) {
 
   function parseStartTag () {
     const start = html.match(startTagOpen)
+    //匹配到开始标签，进行标签属性解析
     if (start) {
       const match = {
         tagName: start[1],
@@ -200,6 +208,7 @@ export function parseHTML (html, options) {
         attr.end = index
         match.attrs.push(attr)
       }
+      //解析到结束标签
       if (end) {
         match.unarySlash = end[1]
         advance(end[0].length)
