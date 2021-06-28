@@ -122,6 +122,7 @@ export function parseHTML (html, options) {
       }
 
       let text, rest, next
+      //匹配到了文本节点
       if (textEnd >= 0) {
         rest = html.slice(textEnd)
         while (
@@ -185,7 +186,7 @@ export function parseHTML (html, options) {
 
   // Clean up any remaining tags
   parseEndTag()
-
+  //删除html字符串
   function advance (n) {
     index += n
     html = html.substring(n)
@@ -201,16 +202,19 @@ export function parseHTML (html, options) {
         start: index
       }
       advance(start[0].length)
+      //是否匹配到结束标签或者属性标签
       let end, attr
       while (!(end = html.match(startTagClose)) && (attr = html.match(dynamicArgAttribute) || html.match(attribute))) {
         attr.start = index
+        //将匹配的开始节点删除掉
         advance(attr[0].length)
         attr.end = index
         match.attrs.push(attr)
       }
-      //解析到结束标签
+      //解析结束标签
       if (end) {
         match.unarySlash = end[1]
+        //将匹配到的属性节点删除掉
         advance(end[0].length)
         match.end = index
         return match

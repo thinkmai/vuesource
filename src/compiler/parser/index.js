@@ -74,7 +74,7 @@ export function createASTElement (
 }
 
 /**
- * Convert HTML string to AST.
+ * 将html转换成ast树结构
  */
 export function parse (
   template: string,

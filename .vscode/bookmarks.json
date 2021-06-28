@@ -129,6 +129,11 @@
 			"path": "src/platforms/web/entry-runtime-with-compiler.js",
 			"bookmarks": [
 				{
+					"line": 21,
+					"column": 25,
+					"label": ""
+				},
+				{
 					"line": 68,
 					"column": 16,
 					"label": ""
@@ -214,7 +219,7 @@
 			"path": "src/compiler/parser/html-parser.js",
 			"bookmarks": [
 				{
-					"line": 193,
+					"line": 194,
 					"column": 29,
 					"label": ""
 				}
