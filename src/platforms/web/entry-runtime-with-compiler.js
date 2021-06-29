@@ -34,7 +34,8 @@ Vue.prototype.$mount = function (
   }
 
   const options = this.$options
-  // resolve template/el and convert to render function
+  // 如果是不存在render函数，则处理template和el情况
+  //vue处理的优先顺序为render>template>el
   if (!options.render) {
     let template = options.template
     if (template) {
@@ -65,7 +66,7 @@ Vue.prototype.$mount = function (
       if (process.env.NODE_ENV !== 'production' && config.performance && mark) {
         mark('compile')
       }
-
+      //compileToFunctions的作用是 tempalte->render函数
       const { render, staticRenderFns } = compileToFunctions(template, {
         outputSourceRange: process.env.NODE_ENV !== 'production',
         shouldDecodeNewlines,

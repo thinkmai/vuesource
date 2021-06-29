@@ -69,7 +69,7 @@
 					"label": ""
 				},
 				{
-					"line": 147,
+					"line": 148,
 					"column": 16,
 					"label": ""
 				}
@@ -134,7 +134,7 @@
 					"label": ""
 				},
 				{
-					"line": 68,
+					"line": 69,
 					"column": 16,
 					"label": ""
 				}
@@ -221,6 +221,16 @@
 				{
 					"line": 194,
 					"column": 29,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/core/instance/render-helpers/index.js",
+			"bookmarks": [
+				{
+					"line": 14,
+					"column": 31,
 					"label": ""
 				}
 			]
