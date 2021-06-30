@@ -66,6 +66,7 @@ export function parseHTML (html, options) {
   let index = 0
   let last, lastTag
   while (html) {
+    debugger
     last = html
     // lastTag不存在或者不是script||style
     if (!lastTag || !isPlainTextElement(lastTag)) {

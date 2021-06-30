@@ -14,6 +14,11 @@
 			"path": "src/compiler/parser/index.js",
 			"bookmarks": [
 				{
+					"line": 33,
+					"column": 39,
+					"label": ""
+				},
+				{
 					"line": 207,
 					"column": 23,
 					"label": ""
@@ -219,7 +224,7 @@
 			"path": "src/compiler/parser/html-parser.js",
 			"bookmarks": [
 				{
-					"line": 194,
+					"line": 195,
 					"column": 29,
 					"label": ""
 				}
