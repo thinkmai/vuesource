@@ -19,11 +19,6 @@
 					"label": ""
 				},
 				{
-					"line": 404,
-					"column": 32,
-					"label": ""
-				},
-				{
 					"line": 625,
 					"column": 12,
 					"label": ""
@@ -119,12 +114,12 @@
 			"path": "src/compiler/index.js",
 			"bookmarks": [
 				{
-					"line": 10,
+					"line": 11,
 					"column": 9,
 					"label": ""
 				},
 				{
-					"line": 19,
+					"line": 23,
 					"column": 37,
 					"label": ""
 				}

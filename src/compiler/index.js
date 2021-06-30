@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* @flow */
 
 import { parse } from './parser/index'
@@ -13,7 +14,10 @@ export const createCompiler = createCompilerCreator(function baseCompile (
   options: CompilerOptions
 ): CompiledResult {
   const ast = parse(template.trim(), options)
-  console.log("🚀 ~ file: index.js ~ line 16 ~ ast", ast)
+  console.log("🚀 ~ file: index.js ~ line 17 ~ ast", ast)
+  // removeKey(ast)
+  // console.log("🚀 ~ file: index.js ~ line 16 ~ ast", JSON.stringify(ast))
+  
   if (options.optimize !== false) {
     optimize(ast, options)
   }
@@ -25,3 +29,14 @@ export const createCompiler = createCompilerCreator(function baseCompile (
     staticRenderFns: code.staticRenderFns
   }
 })
+
+function removeKey(obj){
+  Object.keys(obj).forEach((k)=>{
+    if(k == 'parent'){
+      delete obj['parent']
+    }else if(obj[k] && typeof obj[k] == 'object'){
+      removeKey(obj[k])
+    }
+  
+  })
+}

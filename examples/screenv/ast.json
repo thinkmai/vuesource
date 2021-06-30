@@ -1,0 +1,265 @@
+{
+    "type": 1,
+    "tag": "div",
+    "attrsList": [
+        {
+            "name": "id",
+            "value": "app",
+            "start": 5,
+            "end": 13
+        }
+    ],
+    "attrsMap": {
+        "id": "app"
+    },
+    "rawAttrsMap": {
+        "id": {
+            "name": "id",
+            "value": "app",
+            "start": 5,
+            "end": 13
+        }
+    },
+    "children": [
+        {
+            "type": 1,
+            "tag": "header",
+            "attrsList": [],
+            "attrsMap": {},
+            "rawAttrsMap": {},
+            "children": [
+                {
+                    "type": 1,
+                    "tag": "h1",
+                    "attrsList": [],
+                    "attrsMap": {},
+                    "rawAttrsMap": {},
+                    "children": [
+                        {
+                            "type": 2,
+                            "expression": "_s(msg)+\",一起来学习源码\"",
+                            "tokens": [
+                                {
+                                    "@binding": "msg"
+                                },
+                                ",一起来学习源码"
+                            ],
+                            "text": "{{msg}},一起来学习源码",
+                            "start": 48,
+                            "end": 63
+                        }
+                    ],
+                    "start": 44,
+                    "end": 68,
+                    "plain": true
+                }
+            ],
+            "start": 23,
+            "end": 86,
+            "plain": true
+        },
+        {
+            "type": 3,
+            "text": " ",
+            "start": 86,
+            "end": 95
+        },
+        {
+            "type": 1,
+            "tag": "div",
+            "attrsList": [],
+            "attrsMap": {
+                "class": "fw-wrap"
+            },
+            "rawAttrsMap": {
+                "class": {
+                    "name": "class",
+                    "value": "fw-wrap",
+                    "start": 100,
+                    "end": 115
+                }
+            },
+            "children": [
+                {
+                    "type": 1,
+                    "tag": "div",
+                    "attrsList": [],
+                    "attrsMap": {},
+                    "rawAttrsMap": {},
+                    "children": [
+                        {
+                            "type": 3,
+                            "text": "前端三大框架",
+                            "start": 134,
+                            "end": 140
+                        }
+                    ],
+                    "start": 129,
+                    "end": 146,
+                    "plain": true
+                },
+                {
+                    "type": 3,
+                    "text": " ",
+                    "start": 146,
+                    "end": 159
+                },
+                {
+                    "type": 1,
+                    "tag": "ul",
+                    "attrsList": [],
+                    "attrsMap": {},
+                    "rawAttrsMap": {},
+                    "children": [
+                        {
+                            "type": 1,
+                            "tag": "li",
+                            "attrsList": [],
+                            "attrsMap": {
+                                "v-for": "item in frameworks",
+                                ":key": "item"
+                            },
+                            "rawAttrsMap": {
+                                "v-for": {
+                                    "name": "v-for",
+                                    "value": "item in frameworks",
+                                    "start": 184,
+                                    "end": 210
+                                },
+                                ":key": {
+                                    "name": ":key",
+                                    "value": "item",
+                                    "start": 211,
+                                    "end": 222
+                                }
+                            },
+                            "children": [
+                                {
+                                    "type": 2,
+                                    "expression": "_s(item)",
+                                    "tokens": [
+                                        {
+                                            "@binding": "item"
+                                        }
+                                    ],
+                                    "text": "{{item}}",
+                                    "start": 223,
+                                    "end": 231
+                                }
+                            ],
+                            "start": 180,
+                            "end": 236,
+                            "for": "frameworks",
+                            "alias": "item",
+                            "key": "item",
+                            "plain": false
+                        }
+                    ],
+                    "start": 159,
+                    "end": 254,
+                    "plain": true
+                }
+            ],
+            "start": 95,
+            "end": 269,
+            "plain": false,
+            "staticClass": "\"fw-wrap\""
+        },
+        {
+            "type": 3,
+            "text": " ",
+            "start": 269,
+            "end": 278
+        },
+        {
+            "type": 1,
+            "tag": "input",
+            "attrsList": [
+                {
+                    "name": "v-model",
+                    "value": "name",
+                    "start": 285,
+                    "end": 299
+                }
+            ],
+            "attrsMap": {
+                "v-model": "name"
+            },
+            "rawAttrsMap": {
+                "v-model": {
+                    "name": "v-model",
+                    "value": "name",
+                    "start": 285,
+                    "end": 299
+                }
+            },
+            "children": [],
+            "start": 278,
+            "end": 300,
+            "plain": false,
+            "hasBindings": true,
+            "directives": [
+                {
+                    "name": "model",
+                    "rawName": "v-model",
+                    "value": "name",
+                    "arg": null,
+                    "isDynamicArg": false,
+                    "start": 285,
+                    "end": 299
+                }
+            ]
+        },
+        {
+            "type": 3,
+            "text": " ",
+            "start": 300,
+            "end": 309
+        },
+        {
+            "type": 1,
+            "tag": "div",
+            "attrsList": [],
+            "attrsMap": {
+                "style": "text-align: center; color:aqua"
+            },
+            "rawAttrsMap": {
+                "style": {
+                    "name": "style",
+                    "value": "text-align: center; color:aqua",
+                    "start": 314,
+                    "end": 352
+                }
+            },
+            "children": [
+                {
+                    "type": 2,
+                    "expression": "_s(name)",
+                    "tokens": [
+                        {
+                            "@binding": "name"
+                        }
+                    ],
+                    "text": "{{name}}",
+                    "start": 353,
+                    "end": 361
+                }
+            ],
+            "start": 309,
+            "end": 367,
+            "plain": false,
+            "staticStyle": "{\"text-align\":\"center\",\"color\":\"aqua\"}"
+        }
+    ],
+    "start": 0,
+    "end": 378,
+    "plain": false,
+    "attrs": [
+        {
+            "name": "id",
+            "value": "\"app\"",
+            "start": 5,
+            "end": 13
+        }
+    ]
+}
