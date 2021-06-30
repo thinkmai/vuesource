@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* @flow */
 
 import config from '../config'
@@ -152,57 +153,22 @@ export function mountComponent (
   hydrating?: boolean
 ): Component {
   vm.$el = el
-  console.log("🚀 ~ file: lifecycle.js ~ line 147 ~ vm", vm)
   if (!vm.$options.render) {
+    //如果render函数依然不存在，则创建空vnode给render函数
     vm.$options.render = createEmptyVNode
-    if (process.env.NODE_ENV !== 'production') {
-      /* istanbul ignore if */
-      if ((vm.$options.template && vm.$options.template.charAt(0) !== '#') ||
-        vm.$options.el || el) {
-        warn(
-          'You are using the runtime-only build of Vue where the template ' +
-          'compiler is not available. Either pre-compile the templates into ' +
-          'render functions, or use the compiler-included build.',
-          vm
-        )
-      } else {
-        warn(
-          'Failed to mount component: template or render function not defined.',
-          vm
-        )
-      }
-    }
   }
+  //在beforeMount生命周期函数调用时，render函数已经生成
   callHook(vm, 'beforeMount')
-
-  let updateComponent
-  /* istanbul ignore if */
-  if (process.env.NODE_ENV !== 'production' && config.performance && mark) {
-    updateComponent = () => {
-      const name = vm._name
-      const id = vm._uid
-      const startTag = `vue-perf-start:${id}`
-      const endTag = `vue-perf-end:${id}`
-
-      mark(startTag)
-      const vnode = vm._render()
-      mark(endTag)
-      measure(`vue ${name} render`, startTag, endTag)
-
-      mark(startTag)
-      vm._update(vnode, hydrating)
-      mark(endTag)
-      measure(`vue ${name} patch`, startTag, endTag)
-    }
-  } else {
-    updateComponent = () => {
-      vm._update(vm._render(), hydrating)
-    }
+  //声明组件更新方法，用于watcher调用
+  let updateComponent = () => {
+    //render函数->vnode->patch diff算法->生成补丁->更新真实Dom
+    vm._update(vm._render(), hydrating)
   }
 
   // we set this to vm._watcher inside the watcher's constructor
   // since the watcher's initial patch may call $forceUpdate (e.g. inside child
   // component's mounted hook), which relies on vm._watcher being already defined
+  //new Watcher时，会先执行updateComponent
   new Watcher(vm, updateComponent, noop, {
     before () {
       if (vm._isMounted && !vm._isDestroyed) {

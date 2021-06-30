@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* @flow */
 
 import config from '../config'
@@ -17,14 +18,6 @@ export function initMixin (Vue: Class<Component>) {
     const vm: Component = this
     // a uid
     vm._uid = uid++
-
-    let startTag, endTag
-    /* istanbul ignore if */
-    if (process.env.NODE_ENV !== 'production' && config.performance && mark) {
-      startTag = `vue-perf-start:${vm._uid}`
-      endTag = `vue-perf-end:${vm._uid}`
-      mark(startTag)
-    }
 
     // a flag to avoid this being observed
     vm._isVue = true
@@ -57,13 +50,6 @@ export function initMixin (Vue: Class<Component>) {
     initState(vm)
     initProvide(vm) // resolve provide after data/props
     callHook(vm, 'created')
-
-    /* istanbul ignore if */
-    if (process.env.NODE_ENV !== 'production' && config.performance && mark) {
-      vm._name = formatComponentName(vm, false)
-      mark(endTag)
-      measure(`vue ${vm._name} init`, startTag, endTag)
-    }
 
     if (vm.$options.el) {
       vm.$mount(vm.$options.el)

@@ -64,12 +64,12 @@
 			"path": "src/core/instance/lifecycle.js",
 			"bookmarks": [
 				{
-					"line": 58,
+					"line": 59,
 					"column": 24,
 					"label": ""
 				},
 				{
-					"line": 148,
+					"line": 149,
 					"column": 16,
 					"label": ""
 				}
@@ -119,6 +119,11 @@
 			"path": "src/compiler/index.js",
 			"bookmarks": [
 				{
+					"line": 10,
+					"column": 9,
+					"label": ""
+				},
+				{
 					"line": 19,
 					"column": 37,
 					"label": ""
@@ -129,12 +134,12 @@
 			"path": "src/platforms/web/entry-runtime-with-compiler.js",
 			"bookmarks": [
 				{
-					"line": 21,
+					"line": 22,
 					"column": 25,
 					"label": ""
 				},
 				{
-					"line": 69,
+					"line": 54,
 					"column": 16,
 					"label": ""
 				}

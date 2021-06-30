@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>screenv源码学习01</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    body,html,#app{
+        width: 100%;
+        height: 100%;
+    }
+    header{
+        text-align: center;
+    }
+    #app{
+        text-align: center;
+    }
+    .fw-wrap{
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       text-align: center;
+    }
+    .fw-wrap > ol{
+        width: 200px;
+    }
+</style>
+<body>
+    <div id="app">
+        <header>
+            <h1>{{msg}},一起来学习源码</h1>
+        </header>
+        <div class="fw-wrap">
+            <div>前端三大框架</div>
+            <ul>
+                <li v-for="item in frameworks" :key="item">{{item}}</li>
+            </ul>
+        </div>
+        <input v-model="name">
+        <div style="text-align: center; color:aqua">{{name}}</div>
+    </div>
+</body>
+<script src="../../dist/vue.js"></script>
+<script src="app.js"></script>
+</html>

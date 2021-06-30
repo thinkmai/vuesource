@@ -91,6 +91,7 @@ export default class Watcher {
         )
       }
     }
+    //new Watcher后，会先去获取值，也就是调用get,get就是updateComponent
     this.value = this.lazy
       ? undefined
       : this.get()
