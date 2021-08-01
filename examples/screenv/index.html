@@ -46,8 +46,11 @@
         <input v-model="name">
         <div style="text-align: center; color:aqua">{{name}}</div>
         <keep-alive>
-            <div>keeplive</div>
+            <component :is="comp" v-if="showKeepAliveComp">
+                <span>keeplive</span>
+            </component>
         </keep-alive>
+        <button @click="onSwitchShow">keepAlive测试</button>
     </div>
 </body>
 <script src="../../dist/vue.js"></script>

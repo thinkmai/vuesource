@@ -14,8 +14,15 @@ new Vue({
                 'React',
                 'Angular'
             ],
-            name:'分享者:screenv'
+            name:'分享者:screenv',
+            showKeepAliveComp: false,
+            comp:'dynamic'
         } 
+    },
+    methods:{
+        onSwitchShow(){
+            this.showKeepAliveComp = !this.showKeepAliveComp;
+        }
     },
     mounted(){
         console.log('vue mounted---->>%o', this);

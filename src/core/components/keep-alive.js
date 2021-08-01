@@ -114,7 +114,7 @@ export default {
 
   render () {
     const slot = this.$slots.default
-    //获取第一个子元素
+    //获取第一个子元素，针对component动态组件有效
     const vnode: VNode = getFirstComponentChild(slot)
     //获取子元素的options
     const componentOptions: ?VNodeComponentOptions = vnode && vnode.componentOptions
@@ -147,6 +147,7 @@ export default {
         : vnode.key
       if (cache[key]) {
         vnode.componentInstance = cache[key].componentInstance
+        console.log("🚀 ~ file: keep-alive.js ~ line 150 ~ render ~ vnode.componentInstance", vnode.componentInstance)
         // make current key freshest
         //如果缓存存在，刷新缓存里的值，删除原来的，放入最新的
         remove(keys, key)
