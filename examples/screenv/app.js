@@ -1,4 +1,9 @@
+/* eslint-disable no-undef */
 // eslint-disable-next-line no-undef
+Vue.component('dynamic',{
+    template:`<div>dynamic</div>`
+})
+
 new Vue({
     el: '#app',
     data(){

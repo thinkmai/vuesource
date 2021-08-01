@@ -68,6 +68,7 @@ export default {
 
   methods: {
     cacheVNode() {
+      //在mounted后和updated后，调用，缓存组件状态
       const { cache, keys, vnodeToCache, keyToCache } = this
       if (vnodeToCache) {
         const { tag, componentInstance, componentOptions } = vnodeToCache
@@ -113,12 +114,21 @@ export default {
 
   render () {
     const slot = this.$slots.default
+    //获取第一个子元素
     const vnode: VNode = getFirstComponentChild(slot)
+    //获取子元素的options
     const componentOptions: ?VNodeComponentOptions = vnode && vnode.componentOptions
     if (componentOptions) {
+      /**
+       * 检测是否要缓存组件
+       * 1. 不在include字符或者正则匹配的组件名称
+       * 2. 在exclued字符或者匹配到的组件名称
+       */
       // check pattern
+      //获取options中的name字段值
       const name: ?string = getComponentName(componentOptions)
       const { include, exclude } = this
+      //判断不缓存的条件，将vnode直接返回出去，不做缓存处理
       if (
         // not included
         (include && (!name || !matches(include, name))) ||
@@ -129,6 +139,7 @@ export default {
       }
 
       const { cache, keys } = this
+      //取得组件的key，没有就是null
       const key: ?string = vnode.key == null
         // same constructor may get registered as different local components
         // so cid alone is not enough (#3269)
@@ -137,6 +148,7 @@ export default {
       if (cache[key]) {
         vnode.componentInstance = cache[key].componentInstance
         // make current key freshest
+        //如果缓存存在，刷新缓存里的值，删除原来的，放入最新的
         remove(keys, key)
         keys.push(key)
       } else {
