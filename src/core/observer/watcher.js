@@ -1,7 +1,6 @@
 /* @flow */
 
 import {
-  warn,
   remove,
   isObject,
   parsePath,
@@ -83,12 +82,6 @@ export default class Watcher {
       this.getter = parsePath(expOrFn)
       if (!this.getter) {
         this.getter = noop
-        process.env.NODE_ENV !== 'production' && warn(
-          `Failed watching path: "${expOrFn}" ` +
-          'Watcher only accepts simple dot-delimited paths. ' +
-          'For full control, use a function instead.',
-          vm
-        )
       }
     }
     //new Watcher后，会先去获取值，也就是调用get,get就是updateComponent
