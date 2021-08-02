@@ -314,7 +314,7 @@ export function parse (
     },
     //处理匹配到的文本节点，创建child节点，放到currentParent.children数组里
     chars (text: string, start: number, end: number) {
-      console.log("🚀 ~ file: index.js ~ line 317 ~ chars ~ text", text)
+      // console.log("🚀 ~ file: index.js ~ line 317 ~ chars ~ text", text)
       if (!currentParent) {
         if (process.env.NODE_ENV !== 'production') {
           if (text === template) {
