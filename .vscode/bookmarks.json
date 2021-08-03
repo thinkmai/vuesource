@@ -1,16 +1,6 @@
 {
 	"files": [
 		{
-			"path": "src/core/instance/lifecycle.js",
-			"bookmarks": [
-				{
-					"line": 171,
-					"column": 34,
-					"label": ""
-				}
-			]
-		},
-		{
 			"path": "src/core/instance/state.js",
 			"bookmarks": [
 				{
