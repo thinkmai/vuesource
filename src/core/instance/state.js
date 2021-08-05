@@ -277,12 +277,14 @@ function createComputedGetter (key) {
   return function computedGetter () {
     const watcher = this._computedWatchers && this._computedWatchers[key]
     if (watcher) {
+      console.log("🚀 ~ file: state.js ~ line 280 ~ computedGetter ~ watcher", watcher)
       //计算属性依赖的属性改变时，dirty会是true，在render是，用到计算属性的地方，会执行getter方法，会计算最新值给到watcher的value
       if (watcher.dirty) {
         watcher.evaluate()
       }
       //主要做依赖收集
       if (Dep.target) {
+        console.log("🚀 ~ file: state.js ~ line 287 ~ computedGetter ~ Dep.target", Dep.target)
         watcher.depend()
       }
       return watcher.value

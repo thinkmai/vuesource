@@ -159,6 +159,7 @@ export default class Watcher {
   update () {
     /* istanbul ignore else */
     if (this.lazy) {
+      console.log("🚀 ~ file: watcher.js ~ line 162 ~ Watcher ~ update ~ this.lazy", this.lazy)
       this.dirty = true
     } else if (this.sync) {
       this.run()
@@ -201,6 +202,8 @@ export default class Watcher {
    */
   evaluate () {
     this.value = this.get()
+    console.log("🚀 ~ file: watcher.js ~ line 205 ~ Watcher ~ evaluate ~ this.value", this.value)
+    console.log("🚀 ~ file: watcher.js ~ line 205 ~ Watcher ~ evaluate ~ this.get", this.get)
     this.dirty = false
   }
 
