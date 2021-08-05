@@ -9,13 +9,18 @@
 					"label": ""
 				},
 				{
-					"line": 251,
-					"column": 12,
+					"line": 213,
+					"column": 27,
 					"label": ""
 				},
 				{
-					"line": 363,
-					"column": 25,
+					"line": 239,
+					"column": 17,
+					"label": ""
+				},
+				{
+					"line": 392,
+					"column": 23,
 					"label": ""
 				}
 			]
@@ -61,6 +66,41 @@
 				{
 					"line": 173,
 					"column": 40,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/core/instance/lifecycle.js",
+			"bookmarks": [
+				{
+					"line": 149,
+					"column": 19,
+					"label": ""
+				},
+				{
+					"line": 172,
+					"column": 9,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/core/instance/init.js",
+			"bookmarks": [
+				{
+					"line": 49,
+					"column": 13,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/core/observer/dep.js",
+			"bookmarks": [
+				{
+					"line": 50,
+					"column": 24,
 					"label": ""
 				}
 			]

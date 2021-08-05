@@ -210,7 +210,7 @@ function initComputed (vm: Component, computed: Object) {
 
     if (!isSSR) {
       // create internal watcher for the computed property.
-      //创建watcher，对方法中用到的属性，进行依赖收集，在所依赖的属性有改变的时候，执行getter
+      //创建watcher，对方法中用到的属性，进行依赖收集，在所依赖的属性有改变的时候，执行getter，设置dirty=true，在真正用到计算属性的地方计算最新值
       watchers[key] = new Watcher(
         vm,
         getter || noop,
@@ -277,12 +277,12 @@ function createComputedGetter (key) {
   return function computedGetter () {
     const watcher = this._computedWatchers && this._computedWatchers[key]
     if (watcher) {
+      //计算属性依赖的属性改变时，dirty会是true，在render是，用到计算属性的地方，会执行getter方法，会计算最新值给到watcher的value
       if (watcher.dirty) {
         watcher.evaluate()
       }
+      //主要做依赖收集
       if (Dep.target) {
-        console.log("🚀 ~ file: state.js ~ line 260 ~ computedGetter ~ Dep.target", Dep.target)
-        console.log("🚀 ~ file: state.js ~ line 262 ~ computedGetter ~ watcher", watcher)
         watcher.depend()
       }
       return watcher.value
