@@ -45,7 +45,26 @@ export function proxy (target: Object, sourceKey: string, key: string) {
   }
   Object.defineProperty(target, key, sharedPropertyDefinition)
 }
-//watch每个属性都会创建一个watcher
+/**
+ * 创建watcher的地方
+ * 1.整个组件会创建一个watcher
+ * 2.computed里面，每个属性创建一个watcher
+ * 3.watch 每个属性创建一个watcher
+ * 依赖收集
+ * 1.在创建watcher时，会首先执行getter方法，获取数据，获取数据的时候，会走数据劫持的getter方法，getter方法里，dep开始收集watcher
+ * 依赖更新
+ * 1.在属性更新的时候，会走数据劫持的setter方法，如果数据真的发生了变化，会调用dep依赖项，也就是watcher(也就是观察者)的update
+ * 2.watcher,执行watcher中的get方法，get的值可能是get、function，updateComponent等等
+ * 3.最终都会执行updateComponent，updateComponent就是vm._update(vm._render(), hydrating)
+ * 
+ * 初始化顺序
+ * initProps
+ * initMethods
+ * initData
+ * initComputed(computed可能用到state，props，method里面的方法或者属性，所以放到他们之后)
+ * initWatch
+ * @param {*} vm 
+ */
 export function initState (vm: Component) {
   vm._watchers = []
   const opts = vm.$options
@@ -176,10 +195,12 @@ function initComputed (vm: Component, computed: Object) {
   const watchers = vm._computedWatchers = Object.create(null)
   // computed properties are just getters during SSR
   const isSSR = isServerRendering()
-
+  //计算属性下的每个key，都创建一个watcher
   for (const key in computed) {
     const userDef = computed[key]
+    //判断，计算属性，是否是个方法，不是方法的情况下，取对象下的get方法
     const getter = typeof userDef === 'function' ? userDef : userDef.get
+    //开发的时候，如果getter为空，会给出警告提示
     if (process.env.NODE_ENV !== 'production' && getter == null) {
       warn(
         `Getter is missing for computed property "${key}".`,
@@ -188,8 +209,8 @@ function initComputed (vm: Component, computed: Object) {
     }
 
     if (!isSSR) {
-      console.log("🚀 ~ file: state.js ~ line 187 ~ initComputed ~ isSSR", isSSR)
       // create internal watcher for the computed property.
+      //创建watcher，对方法中用到的属性，进行依赖收集，在所依赖的属性有改变的时候，执行getter
       watchers[key] = new Watcher(
         vm,
         getter || noop,
@@ -201,6 +222,7 @@ function initComputed (vm: Component, computed: Object) {
     // component-defined computed properties are already defined on the
     // component prototype. We only need to define computed properties defined
     // at instantiation here.
+    //这里判断，计算属性中的key，是否已经在vm全局存在了，不存在的情况下，将key挂载到vm先做响应式，如果存在，则会在开发的时候给出提示，具体存在在什么地方
     if (!(key in vm)) {
       defineComputed(vm, key, userDef)
     } else if (process.env.NODE_ENV !== 'production') {
@@ -246,6 +268,11 @@ export function defineComputed (
   Object.defineProperty(target, key, sharedPropertyDefinition)
 }
 
+/**
+ * 这是一个高阶函数，返回时一个geter函数，在render执行过程中，computedGetter才会执行，拿到watcher的value
+ * @param {*} key 
+ * @returns 
+ */
 function createComputedGetter (key) {
   return function computedGetter () {
     const watcher = this._computedWatchers && this._computedWatchers[key]
@@ -254,6 +281,8 @@ function createComputedGetter (key) {
         watcher.evaluate()
       }
       if (Dep.target) {
+        console.log("🚀 ~ file: state.js ~ line 260 ~ computedGetter ~ Dep.target", Dep.target)
+        console.log("🚀 ~ file: state.js ~ line 262 ~ computedGetter ~ watcher", watcher)
         watcher.depend()
       }
       return watcher.value

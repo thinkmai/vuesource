@@ -159,6 +159,7 @@ export function defineReactive (
     configurable: true,
     get: function reactiveGetter () {
       const value = getter ? getter.call(obj) : val
+      console.log("🚀 ~ file: index.js ~ line 162 ~ reactiveGetter ~ value", value)
       if (Dep.target) {
         dep.depend()
         if (childOb) {
@@ -171,6 +172,7 @@ export function defineReactive (
       return value
     },
     set: function reactiveSetter (newVal) {
+      console.log("🚀 ~ file: index.js ~ line 175 ~ reactiveSetter ~ newVal", newVal)
       const value = getter ? getter.call(obj) : val
       /* eslint-disable no-self-compare */
       if (newVal === value || (newVal !== newVal && value !== value)) {
@@ -189,6 +191,7 @@ export function defineReactive (
       }
       childOb = !shallow && observe(newVal)
       dep.notify()
+      console.log("🚀 ~ file: index.js ~ line 194 ~ reactiveSetter ~ dep", dep)
     }
   })
 }

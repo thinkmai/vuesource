@@ -9,6 +9,11 @@
 					"label": ""
 				},
 				{
+					"line": 251,
+					"column": 12,
+					"label": ""
+				},
+				{
 					"line": 363,
 					"column": 25,
 					"label": ""
@@ -31,6 +36,31 @@
 				{
 					"line": 18,
 					"column": 21,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/core/observer/watcher.js",
+			"bookmarks": [
+				{
+					"line": 96,
+					"column": 14,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/core/observer/index.js",
+			"bookmarks": [
+				{
+					"line": 159,
+					"column": 28,
+					"label": ""
+				},
+				{
+					"line": 173,
+					"column": 40,
 					"label": ""
 				}
 			]

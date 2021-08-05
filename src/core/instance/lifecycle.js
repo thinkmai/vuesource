@@ -162,6 +162,7 @@ export function mountComponent (
   //声明组件更新方法，用于watcher调用
   let updateComponent = () => {
     //render函数->vnode->patch diff算法->生成补丁->更新真实Dom
+    console.log("🚀 ~ file: lifecycle.js ~ line 174 ~ updateComponent ~ hydrating", hydrating)
     vm._update(vm._render(), hydrating)
   }
 

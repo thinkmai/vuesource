@@ -209,6 +209,7 @@ export default class Watcher {
    */
   depend () {
     let i = this.deps.length
+    console.log("🚀 ~ file: watcher.js ~ line 212 ~ Watcher ~ depend ~ this.deps", this.deps)
     while (i--) {
       this.deps[i].depend()
     }
