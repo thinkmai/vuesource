@@ -1,0 +1,113 @@
+{
+  "type": 1,
+  "tag": "div",
+  "attrsList": [{ "name": "id", "value": "app", "start": 5, "end": 13 }],
+  "attrsMap": { "id": "app" },
+  "rawAttrsMap": {
+    "id": { "name": "id", "value": "app", "start": 5, "end": 13 }
+  },
+  "children": [
+    {
+      "type": 1,
+      "tag": "app-slot",
+      "attrsList": [],
+      "attrsMap": {},
+      "rawAttrsMap": {},
+      "children": [
+        { "type": 3, "text": " ", "start": 131, "end": 144 },
+        {
+          "type": 1,
+          "tag": "div",
+          "attrsList": [],
+          "attrsMap": {},
+          "rawAttrsMap": {},
+          "children": [
+            { "type": 3, "text": "default", "start": 149, "end": 156 }
+          ],
+          "start": 144,
+          "end": 162,
+          "plain": true
+        }
+      ],
+      "start": 23,
+      "end": 280,
+      "scopedSlots": {
+        "\"header\"": {
+          "type": 1,
+          "tag": "template",
+          "attrsList": [],
+          "attrsMap": { "v-slot:header": "" },
+          "rawAttrsMap": {
+            "v-slot:header": {
+              "name": "v-slot:header",
+              "value": "",
+              "start": 56,
+              "end": 72
+            }
+          },
+          "children": [
+            {
+              "type": 1,
+              "tag": "div",
+              "attrsList": [],
+              "attrsMap": {},
+              "rawAttrsMap": {},
+              "children": [
+                { "type": 3, "text": "header", "start": 95, "end": 101 }
+              ],
+              "start": 90,
+              "end": 107,
+              "plain": true
+            }
+          ],
+          "start": 46,
+          "end": 131,
+          "plain": false,
+          "slotScope": "_empty_",
+          "slotTarget": "\"header\"",
+          "slotTargetDynamic": false
+        },
+        "\"footer\"": {
+          "type": 1,
+          "tag": "template",
+          "attrsList": [],
+          "attrsMap": { "v-slot:footer": "" },
+          "rawAttrsMap": {
+            "v-slot:footer": {
+              "name": "v-slot:footer",
+              "value": "",
+              "start": 185,
+              "end": 201
+            }
+          },
+          "children": [
+            {
+              "type": 1,
+              "tag": "div",
+              "attrsList": [],
+              "attrsMap": {},
+              "rawAttrsMap": {},
+              "children": [
+                { "type": 3, "text": "footer", "start": 224, "end": 230 }
+              ],
+              "start": 219,
+              "end": 236,
+              "plain": true
+            }
+          ],
+          "start": 175,
+          "end": 260,
+          "plain": false,
+          "slotScope": "_empty_",
+          "slotTarget": "\"footer\"",
+          "slotTargetDynamic": false
+        }
+      },
+      "plain": false
+    }
+  ],
+  "start": 0,
+  "end": 291,
+  "plain": false,
+  "attrs": [{ "name": "id", "value": "\"app\"", "start": 5, "end": 13 }]
+}

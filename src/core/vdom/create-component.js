@@ -105,6 +105,7 @@ export function createComponent (
   children: ?Array<VNode>,
   tag?: string
 ): VNode | Array<VNode> | void {
+  console.log("🚀 ~ file: create-component.js ~ line 108 ~ Ctor", tag)
   if (isUndef(Ctor)) {
     return
   }

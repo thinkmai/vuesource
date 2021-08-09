@@ -13,6 +13,7 @@ export const createCompiler = createCompilerCreator(function baseCompile (
   template: string,
   options: CompilerOptions
 ): CompiledResult {
+  console.log("🚀 ~ file: index.js ~ line 14 ~ template", template)
   const ast = parse(template.trim(), options)
   console.log("🚀 ~ file: index.js ~ line 17 ~ ast", ast)
   // removeKey(ast)

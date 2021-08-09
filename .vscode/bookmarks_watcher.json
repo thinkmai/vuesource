@@ -104,16 +104,6 @@
 					"label": ""
 				}
 			]
-		},
-		{
-			"path": "src/core/global-api/assets.js",
-			"bookmarks": [
-				{
-					"line": 5,
-					"column": 31,
-					"label": ""
-				}
-			]
 		}
 	]
 }

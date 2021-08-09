@@ -1,0 +1,53 @@
+{
+  "type": 1,
+  "tag": "div",
+  "attrsList": [],
+  "attrsMap": {},
+  "rawAttrsMap": {},
+  "children": [
+    {
+      "type": 1,
+      "tag": "slot",
+      "attrsList": [],
+      "attrsMap": { "name": "header" },
+      "rawAttrsMap": {
+        "name": { "name": "name", "value": "header", "start": 16, "end": 29 }
+      },
+      "children": [],
+      "start": 10,
+      "end": 37,
+      "plain": false,
+      "slotName": "\"header\""
+    },
+    { "type": 3, "text": " ", "start": 37, "end": 42 },
+    {
+      "type": 1,
+      "tag": "slot",
+      "attrsList": [],
+      "attrsMap": {},
+      "rawAttrsMap": {},
+      "children": [],
+      "start": 42,
+      "end": 55,
+      "plain": true
+    },
+    { "type": 3, "text": " ", "start": 55, "end": 60 },
+    {
+      "type": 1,
+      "tag": "slot",
+      "attrsList": [],
+      "attrsMap": { "name": "footer" },
+      "rawAttrsMap": {
+        "name": { "name": "name", "value": "footer", "start": 66, "end": 79 }
+      },
+      "children": [],
+      "start": 60,
+      "end": 87,
+      "plain": false,
+      "slotName": "\"footer\""
+    }
+  ],
+  "start": 0,
+  "end": 96,
+  "plain": true
+}

@@ -12,6 +12,7 @@ export function renderSlot (
   bindObject: ?Object
 ): ?Array<VNode> {
   const scopedSlotFn = this.$scopedSlots[name]
+  console.log("🚀 ~ file: render-slot.js ~ line 15 ~ this", this)
   let nodes
   if (scopedSlotFn) {
     // scoped slot

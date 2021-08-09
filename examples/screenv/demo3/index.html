@@ -1,0 +1,17 @@
+</style>
+<body>
+    <div id="app">
+        <app-slot>
+            <template v-slot:header>
+                <div>header</div>
+            </template>
+            <div>default</div>
+            <template v-slot:footer>
+                <div>footer</div>
+            </template>
+        </app-slot>
+    </div>
+</body>
+<script src="../../../dist/vue.js"></script>
+<script src="./app.js"></script>
+</html>
