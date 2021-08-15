@@ -15,9 +15,9 @@ export const createCompiler = createCompilerCreator(function baseCompile (
 ): CompiledResult {
   console.log("🚀 ~ file: index.js ~ line 14 ~ template", template)
   const ast = parse(template.trim(), options)
-  console.log("🚀 ~ file: index.js ~ line 17 ~ ast", ast)
-  // removeKey(ast)
-  // console.log("🚀 ~ file: index.js ~ line 16 ~ ast", JSON.stringify(ast))
+  // console.log("🚀 ~ file: index.js ~ line 17 ~ ast", ast)
+  removeKey(ast)
+  console.log("🚀 ~ file: index.js ~ line 16 ~ ast", JSON.stringify(ast))
   
   if (options.optimize !== false) {
     optimize(ast, options)
