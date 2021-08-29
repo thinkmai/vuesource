@@ -702,7 +702,6 @@ export function createPatchFunction (backend) {
       if (isDef(oldVnode)) invokeDestroyHook(oldVnode)
       return
     }
-
     let isInitialPatch = false
     const insertedVnodeQueue = []
 
@@ -728,14 +727,6 @@ export function createPatchFunction (backend) {
             if (hydrate(oldVnode, vnode, insertedVnodeQueue)) {
               invokeInsertHook(vnode, insertedVnodeQueue, true)
               return oldVnode
-            } else if (process.env.NODE_ENV !== 'production') {
-              warn(
-                'The client-side rendered virtual DOM tree is not matching ' +
-                'server-rendered content. This is likely caused by incorrect ' +
-                'HTML markup, for example nesting block-level elements inside ' +
-                '<p>, or missing <tbody>. Bailing hydration and performing ' +
-                'full client-side render.'
-              )
             }
           }
           // either not server-rendered, or hydration failed.
