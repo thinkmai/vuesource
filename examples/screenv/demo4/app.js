@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 Vue.component('comp1',{
   template:`<div>
-  comp1-----{{pdata.a}}
+  comp1-----{{pdata.c}}
   </div>`,
   props:{
     pdata:{
@@ -53,9 +53,21 @@ new Vue({
     };
   },
   computed: {
+    
+  },
+  mounted(){
+    this.resData = {
+      a:123,
+      b:456,
+      c:789
+    }
   },
   methods: {
     onChange(){
+      if(!this.resData['c']){
+        this.resData['c'] = 100
+      }
+      this.resData.c = Math.random()
       this.resData.a = Math.random()
     }
   },
